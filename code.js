@@ -3,7 +3,40 @@ document.addEventListener("DOMContentLoaded", () => {
   initialCleanup();
 
   // Hey! Pssst! In here ...
+  document.getElementById("btn-add-line").addEventListener("click",
+    () => {
+      for (let i = 0; i < 10; i++) {
+        let newDiv = document.createElement("div");
+        addBehavior(newDiv);
+        document.getElementById("grid").appendChild(newDiv);
+
+      }
+    });
+
+  // Init behavior of squares
+  for (let s of document.getElementById("grid").children) {
+    addBehavior(s);
+  }
+
+
+  /* METHODE DE GESTION D'EVENT SUR LE PERE
+document.getElementById("grid").addEventListener("click",
+  (event) => {
+    if (event.target.id != "grid") {
+      event.target.style.backgroundColor = "green";
+    }
+  }); */
+
 });
+
+function addBehavior(square) {
+  square.addEventListener("click", (event) => {
+    event.target.style.backgroundColor = "green";
+  });
+
+
+
+}
 
 /**
  * Cleans up the document so that the exercise is easier.
