@@ -1,3 +1,7 @@
+// Sam PEGEOT
+// GitHub Samy57
+
+
 document.addEventListener("DOMContentLoaded", () => {
   // Initial clean up. DO NOT REMOVE.
   initialCleanup();
@@ -33,8 +37,6 @@ function addBehavior(square) {
   square.addEventListener("click", (event) => {
     event.target.style.backgroundColor = "green";
   });
-
-
 
 }
 
