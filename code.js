@@ -35,7 +35,15 @@ document.getElementById("grid").addEventListener("click",
 
 function addBehavior(square) {
   square.addEventListener("click", (event) => {
-    event.target.style.backgroundColor = "green";
+    event.target.classList.add("clicked");
+    event.target.classList.remove("mouseover");
+  });
+
+
+  square.addEventListener("mouseover", (event) => {
+    if (!event.target.classList.contains("clicked")) {
+      event.target.classList.add("mouseover");
+    }
   });
 
 }
